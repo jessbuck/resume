@@ -9,6 +9,7 @@ bio.contact = {};
 bio.contact.email = "jessica.e.buck@gmail.com";
 bio.contact.phone = "732-654-2825";
 bio.pictureUrl = "images/me.jpg";
+bio.skills = ["HTML", "CSS", "JavaScript"];
 
 var experience = [];
 var job1 = {};
@@ -35,10 +36,16 @@ education.push(school2);
 
 var projects = [];
 
-// var formattedName = HTMLheaderName.replace("%data%",bio.name);
-// var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-// $("#header").prepend(formattedRole);
-// $("#header").prepend(formattedName);
+var formattedName = HTMLheaderName.replace("%data%",bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+$("#header").append(HTMLskillsStart);
+for (var i = 0; i < bio.skills.length; i++) {
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+  $("#skills").append(" " + formattedSkill);
+}
 // $("#main").append(experience[0].position + "<br />" + experience[0].employer + "<br />" +experience[0].dates);
 // $("#main").append("<br /><br />" + education[0].degree + "<br />" + education[0].name + "<br />" +education[0].dates);
 // $("#main").append("<br /><br />" + education[1].degree + "<br />" + education[1].name + "<br />" +education[1].dates);
