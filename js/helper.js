@@ -70,6 +70,15 @@ $(document).ready(function() {
   });
 });
 
+function inName(name) {
+  name = name.trim().split(" ");
+  console.log(name);
+  name[1] = name[1].toUpperCase();
+  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+
+  return name[0] + " " + name[1];
+}
+
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
 */
@@ -147,6 +156,17 @@ function initializeMap() {
     });
 
     return locations;
+  }
+
+  function locationFinder(work_obj) {
+    var locationArray = [];
+
+    for (index in work_obj.jobs) {
+      var newLocation = work_obj[index].location;
+      locationArray.push(newLocation);
+    }
+
+    return locationArray;
   }
 
   /*

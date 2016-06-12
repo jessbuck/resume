@@ -7,6 +7,44 @@ displayWork();
 displayEducation();
 
 var projects = [];
+projects.display = function() {
+  var index = 0;
+  projects.projects = [];
+  projects.projects[index] = {};
+  projects.projects[index].title = "Project 1";
+  projects.projects[index].dates = "June 2016";
+  projects.projects[index].description = "Project 1 Description";
+  projects.projects[index].image = "images/sand.jpg";
+  index++;
+
+  projects.projects[index] = {};
+  projects.projects[index].title = "Project 2";
+  projects.projects[index].dates = "June 2016";
+  projects.projects[index].description = "Project 2 Description";
+  projects.projects[index].image = "images/sunrise.jpg";
+  index++;
+
+  projects.projects[index] = {};
+  projects.projects[index].title = "Project 3";
+  projects.projects[index].dates = "June 2016";
+  projects.projects[index].description = "Project 3 Description";
+  projects.projects[index].image = "images/shoe.jpg";
+  index++;
+
+  for(i in projects.projects) {
+    $("#projects").append(HTMLprojectStart);
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
+    $("#projects").append(formattedTitle);
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
+    $("#projects").append(formattedDates);
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+    $("#projects").append(formattedDescription);
+    var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].image);
+    $("#projects").append(formattedImage);
+  }
+}
+
+projects.display();
 
 function displayBio() {
   var bio = {};
