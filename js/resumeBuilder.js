@@ -1,3 +1,4 @@
+// Create resume page content
 var bio = new Bio();
 var work = new Work();
 var projects = new Projects();
@@ -9,6 +10,7 @@ education.display();
 
 $("#mapDiv").append(googleMap);
 
+// Resume objects
 /**
 * @description Represents the resume bio
 * @constructor
