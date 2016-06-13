@@ -16,6 +16,7 @@ var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
+var HTMLhome = '<li class="flex-item"><span class="orange-text">home</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
 var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
@@ -51,7 +52,7 @@ var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' -- %data%</a>';
+var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
@@ -70,15 +71,6 @@ $(document).ready(function() {
   });
 });
 
-function inName(name) {
-  name = name.trim().split(" ");
-  console.log(name);
-  name[1] = name[1].toUpperCase();
-  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-
-  return name[0] + " " + name[1];
-}
-
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
 */
@@ -96,7 +88,6 @@ function logClicks(x,y) {
 
 $(document).click(function(loc) {
   // your code goes here!
-  logClicks(loc.pageX, loc.pageY);
 });
 
 
@@ -156,19 +147,6 @@ function initializeMap() {
     });
 
     return locations;
-  }
-
-  function locationFinder(work_obj) {
-    var locationArray = [];
-
-    for (var index in work_obj.jobs) {
-      if (work_obj.jobs.hasOwnProperty(index)) {
-        var newLocation = work_obj[index].location;
-        locationArray.push(newLocation);
-      }
-    }
-
-    return locationArray;
   }
 
   /*
