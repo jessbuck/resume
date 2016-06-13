@@ -1,3 +1,14 @@
+var bio = new Bio();
+var work = new Work();
+var projects = new Projects();
+var education = new Education();
+bio.display();
+work.display();
+projects.display();
+education.display();
+
+$("#mapDiv").append(googleMap);
+
 /**
 * @description Represents the resume bio
 * @constructor
@@ -131,17 +142,6 @@ function Education() {
   return education;
 }
 
-var bio = new Bio();
-var work = new Work();
-var projects = new Projects();
-var education = new Education();
-bio.display();
-work.display();
-projects.display();
-education.display();
-
-$("#mapDiv").append(googleMap);
-
 // Functions to fill resume objects
 function addBioDetails(bio) {
   bio.name = "Jess Buck";
@@ -152,7 +152,7 @@ function addBioDetails(bio) {
   bio.contacts.github = "jess19";
   bio.contacts.location = "Red Bank, NJ";
   bio.welcomeMessage = "Innovative software developer with a diverse skillset offering over four years of experience in mobile and web application development. Strong ability to research and implement cost-effective solutions throughout the software development lifecycle. Dedicated to delivering efficient, intuitive, scalable applications. ";
-  bio.skills = ["HTML", "CSS", "JavaScript"];
+  bio.skills = ["HTML", "CSS", "JavaScript", "Java", "C#"];
   bio.biopic = "images/me.jpg";
 }
 
