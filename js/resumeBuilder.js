@@ -5,8 +5,9 @@ This is empty on purpose! Your code to build the resume will go here.
 displayBio();
 displayWork();
 displayEducation();
+displayOnlineClasses();
 
-$("#mapDiv").append(googleMap);
+//$("#mapDiv").append(googleMap);
 
 var projects = [];
 projects.display = function() {
@@ -185,5 +186,27 @@ function displayEducation() {
     $("#education").append(formattedLocation);
     var formattedMajor = HTMLschoolMajor.replace("%data%", education[i].major);
     $("#education").append(formattedMajor);
+  }
+}
+
+function displayOnlineClasses() {
+  var index = 0;
+  var onlineClasses = [];
+  onlineClasses[index] = {};
+  onlineClasses[index].title = "Front-End Web Developer Nanodegree";
+  onlineClasses[index].school = "Udacity";
+  onlineClasses[index].dates = "May 2016 - June 2016";
+  onlineClasses[index].url = "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001";
+  index++;
+
+  $("#education").append(HTMLonlineClasses);
+  for(i in onlineClasses) {
+    var formattedTitle = HTMLonlineTitle.replace("%data%", onlineClasses[i].title);
+    var formattedSchool = HTMLonlineSchool.replace("%data%", onlineClasses[i].school);
+    $("#education").append(formattedTitle + formattedSchool);
+    var formattedDates = HTMLonlineDates.replace("%data%", onlineClasses[i].dates);
+    $("#education").append(formattedDates);
+    var formattedUrl = HTMLonlineURL.replace("%data%", onlineClasses[i].url);
+    $("#education").append(formattedUrl);
   }
 }
