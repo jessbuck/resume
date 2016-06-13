@@ -57,9 +57,9 @@ function displayBio() {
   bio.contact.email = "jessica.e.buck@gmail.com";
   bio.contact.phone = "732-654-2825";
   bio.contact.github = "jess19";
-  bio.contact.linkedIn = "jessicaebuck"
   bio.contact.location = "Red Bank, NJ";
   bio.pictureUrl = "images/me.jpg";
+  bio.welcomeMessage = "Innovative software developer with a diverse skillset offering over four years of experience in mobile and web application development. Strong ability to research and implement cost-effective solutions throughout the software development lifecycle. Dedicated to delivering efficient, intuitive, scalable applications. ";
   bio.skills = ["HTML", "CSS", "JavaScript"];
 
   var formattedName = HTMLheaderName.replace("%data%",bio.name);
@@ -71,12 +71,13 @@ function displayBio() {
   var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
   var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
   var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
-  var formattedContactGeneric = HTMLcontactGeneric.replace("%contact%", "linkedIn");
-  formattedContactGeneric = formattedContactGeneric.replace("%data%", bio.contact.linkedIn);
-  $("#topContacts").append(formattedMobile + formattedEmail + formattedContactGeneric + formattedGithub + formattedLocation);
+  $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
 
   var formattedPic = HTMLbioPic.replace("%data%", bio.pictureUrl);
   $("#header").append(formattedPic);
+
+  var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+  $("#header").append(formattedMessage);
 
   $("#header").append(HTMLskillsStart);
   for (var i = 0; i < bio.skills.length; i++) {
