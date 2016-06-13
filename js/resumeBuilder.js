@@ -6,6 +6,8 @@ displayBio();
 displayWork();
 displayEducation();
 
+$("#mapDiv").append(googleMap);
+
 var projects = [];
 projects.display = function() {
   var index = 0;
@@ -54,6 +56,7 @@ function displayBio() {
   bio.contact.email = "jessica.e.buck@gmail.com";
   bio.contact.phone = "732-654-2825";
   bio.contact.github = "jess19";
+  bio.contact.linkedIn = "jessicaebuck"
   bio.contact.location = "Red Bank, NJ";
   bio.pictureUrl = "images/me.jpg";
   bio.skills = ["HTML", "CSS", "JavaScript"];
@@ -67,7 +70,9 @@ function displayBio() {
   var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
   var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
   var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
-  $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
+  var formattedContactGeneric = HTMLcontactGeneric.replace("%contact%", "linkedIn");
+  formattedContactGeneric = formattedContactGeneric.replace("%data%", bio.contact.linkedIn);
+  $("#topContacts").append(formattedMobile + formattedEmail + formattedContactGeneric + formattedGithub + formattedLocation);
 
   var formattedPic = HTMLbioPic.replace("%data%", bio.pictureUrl);
   $("#header").append(formattedPic);
