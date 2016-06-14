@@ -77,11 +77,18 @@ $(document).ready(function() {
     span.addClass('glyphicon-menu-down');
   });
 
-  $('.section-body').on('show.bs.collapse', function () {
+  $('.section-body').on('show.bs.collapse', function() {
     var heading = $(this).prev();
     var span = heading.find('span');
     span.removeClass('glyphicon-menu-down');
     span.addClass('glyphicon-menu-up');
+  });
+
+  $('#mapDiv').on('shown.bs.collapse', function() {
+    if (!$(this).hasClass('initialized')) {
+      initializeMap();
+      $(this).addClass('initialized');
+    }
   });
 });
 
@@ -254,7 +261,7 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-window.addEventListener('load', initializeMap);
+//window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
