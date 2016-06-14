@@ -69,32 +69,39 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         </div>
         <div style="clear: both;"></div>
     </header>
-    <div class="gray panel panel-default">
-      <div class="panel-heading">
-        <h2>Work Experience</h2>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="gray panel panel-default">
+        <div class="panel-heading" role="tab" id="heading-work">
+          <h2>
+            Work Experience
+            <a class="section-collapse" role="button" data-toggle="collapse" data-parent="#accordion" href="#workExperience" aria-expanded="true" aria-controls="workExperience">
+              <span class="glyphicon glyphicon-menu-up"></span>
+            </a>
+          </h2>
+        </div>
+        <div id="workExperience" class="section-body panel-body collapse in" role="tabpanel" aria-labelledby="heading-work">
+        </div>
       </div>
-      <div id="workExperience" class="panel-body">
+      <div class="gray panel panel-default">
+        <div class="panel-heading">
+          <h2>Projects</h2>
+        </div>
+        <div id="projects" class="panel-body">
+        </div>
       </div>
-    </div>
-    <div class="gray panel panel-default">
-      <div class="panel-heading">
-        <h2>Projects</h2>
+      <div class="gray panel panel-default">
+        <div class="panel-heading">
+          <h2>Education</h2>
+        </div>
+        <div id="education" class="panel-body">
+        </div>
       </div>
-      <div id="projects" class="panel-body">
-      </div>
-    </div>
-    <div class="gray panel panel-default">
-      <div class="panel-heading">
-        <h2>Education</h2>
-      </div>
-      <div id="education" class="panel-body">
-      </div>
-    </div>
-    <div class="gray panel panel-default">
-      <div class="panel-heading">
-        <h2>Where I've Lived and Worked</h2>
-      </div>
-      <div id="mapDiv" class="panel-body">
+      <div class="gray panel panel-default">
+        <div class="panel-heading">
+          <h2>Where I've Lived and Worked</h2>
+        </div>
+        <div id="mapDiv" class="panel-body">
+        </div>
       </div>
     </div>
     <footer>

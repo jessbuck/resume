@@ -69,6 +69,20 @@ $(document).ready(function() {
     var iName = inName($name.text()) || function(){};
     $name.html(iName);
   });
+
+  $('.section-body').on('hide.bs.collapse', function () {
+    var heading = $(this).prev();
+    var span = heading.find('span');
+    span.removeClass('glyphicon-menu-up');
+    span.addClass('glyphicon-menu-down');
+  });
+
+  $('.section-body').on('show.bs.collapse', function () {
+    var heading = $(this).prev();
+    var span = heading.find('span');
+    span.removeClass('glyphicon-menu-down');
+    span.addClass('glyphicon-menu-up');
+  });
 });
 
 /*
