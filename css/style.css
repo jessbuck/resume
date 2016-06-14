@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
 body,
 div,
 ul,
@@ -211,4 +218,8 @@ span {
   .biopic {
     display: block;
   }
+}
+
+.social-icon {
+  display: block;
 }
