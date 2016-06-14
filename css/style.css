@@ -138,10 +138,9 @@ a {
 }
 
 .gray {
-  background-color: rgba(242, 242, 242, 0.95);
+  background-color: #f3f3f3;
   padding-bottom: 10px;
   clear:both;
-
 }
 
 .dark-gray {
