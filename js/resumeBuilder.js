@@ -44,8 +44,8 @@ function Bio() {
     $("#header").append(HTMLskillsStart);
     for (var skillIndex in bio.skills) {
       if (bio.skills.hasOwnProperty(skillIndex)) {
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[skillIndex]);
-        $("#skills").append(" " + formattedSkill);
+        var formattedSkill = HTMLskills.replace("%data%", '<img class="skill-icon" src="' + bio.skills[skillIndex].icon + '" alt="' + bio.skills[skillIndex].name +'">'  + bio.skills[skillIndex].name);
+        $("#skills").append(formattedSkill);
       }
     }
   };
@@ -97,7 +97,6 @@ function Projects() {
         $(".project-entry:last").append(formattedDescription);
         for (var imageIndex in projects.projects[projectIndex].images) {
           if (projects.projects[projectIndex].images.hasOwnProperty(imageIndex)) {
-
             var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[projectIndex].images[imageIndex]);
             $(".project-entry:last").append(formattedImage);
           }
@@ -159,7 +158,38 @@ function addBioDetails(bio) {
   bio.contacts.github = "jess19";
   bio.contacts.location = "Red Bank, NJ";
   bio.welcomeMessage = "Innovative software developer with a diverse skillset offering over four years of experience in mobile and web application development. Strong ability to research and implement cost-effective solutions throughout the software development lifecycle. Dedicated to delivering efficient, intuitive, scalable applications. ";
-  bio.skills = ["HTML", "CSS", "JavaScript", "Java", "C#"];
+  bio.skills = [];
+
+  var skill = {};
+  skill.name = "HTML";
+  skill.icon = "images/icons/html5.svg";
+  bio.skills.push(skill);
+
+  skill = {};
+  skill.name = "CSS";
+  skill.icon = "images/icons/css3.svg";
+  bio.skills.push(skill);
+
+  skill = {};
+  skill.name = "JavaScript";
+  skill.icon = "images/icons/javascript.svg";
+  bio.skills.push(skill);
+
+  skill = {};
+  skill.name = "Java";
+  skill.icon = "images/icons/java.svg";
+  bio.skills.push(skill);
+
+  skill = {};
+  skill.name = "C#";
+  skill.icon = "images/icons/csharp.svg";
+  bio.skills.push(skill);
+
+  skill = {};
+  skill.name = "PHP";
+  skill.icon = "images/icons/php.svg";
+  bio.skills.push(skill);
+
   bio.biopic = "images/me.jpg";
 }
 
