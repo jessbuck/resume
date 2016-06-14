@@ -10,6 +10,11 @@ education.display();
 
 $("#mapDiv").append(googleMap);
 
+// $('#footerContacts').append('<li><img class="social-icon" src="images/github.svg"></li>');
+// $('#footerContacts').append('<li"><img class="social-icon" src="images/linkedin.png"></li>');
+$('#footerContacts').append('<li class="footer-contact"><a href="https://github.com/jess19"><span class="social-icon zocial-github"></span>GitHub</a></li>');
+$('#footerContacts').append('<li class="footer-contact"><a href="https://www.linkedin.com/in/jessicaebuck"><span class="social-icon zocial-linkedin"></span>LinkedIn</a></li>');
+
 // Resume objects
 /**
 * @description Represents the resume bio

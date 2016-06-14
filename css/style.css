@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
 body,
 div,
 ul,
@@ -211,4 +218,23 @@ span {
   .biopic {
     display: block;
   }
+}
+
+.footer-contact {
+  background-color: #fff;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+}
+
+.footer-contact:hover {
+  border: 1px solid #fff;
+}
+
+.social-icon {
+  color: #000;
+  display: block;
 }
