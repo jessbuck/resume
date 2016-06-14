@@ -101,6 +101,10 @@ a {
   display: block;
 }
 
+#role {
+  padding-left: 0;
+}
+
 .welcome-message {
   font-style: italic;
   font-size: 18px;
