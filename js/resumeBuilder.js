@@ -97,7 +97,6 @@ function Projects() {
         $(".project-entry:last").append(formattedDescription);
         for (var imageIndex in projects.projects[projectIndex].images) {
           if (projects.projects[projectIndex].images.hasOwnProperty(imageIndex)) {
-
             var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[projectIndex].images[imageIndex]);
             $(".project-entry:last").append(formattedImage);
           }
