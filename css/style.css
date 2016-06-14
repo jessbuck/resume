@@ -42,7 +42,7 @@ h1 {
   font-size: 48px;
   font-family: "Poiret One", cursive;
   text-transform: uppercase;
-  color: #f5a623;
+  color: #F35309;
   line-height: 48px;
   display: inline;
 }
@@ -120,16 +120,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #F35309;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #AC3434;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #F35309;
 }
 
 .white-text {
@@ -137,19 +137,28 @@ a {
   color: #fff;
 }
 
+#header,
+.gray,
+.dark-gray {
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(45,31,35,1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(45,31,35,1);
+  box-shadow: 2px 2px 5px 0px rgba(45,31,35,1);
+}
+
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;
+  margin: 20px 0;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #2d1f23;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #2d1f23;
 }
 
 .flex-box {
