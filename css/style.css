@@ -222,6 +222,22 @@ span {
   }
 }
 
-.social-icon {
+.skill-icon, .social-icon {
   display: block;
+}
+
+#skills {
+  text-align: center;
+}
+
+.skill-icon {
+  background-color: #fff;
+  height: 60px;
+  width: 60px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
 }
