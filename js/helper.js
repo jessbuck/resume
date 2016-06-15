@@ -89,9 +89,26 @@ $(document).ready(function() {
   });
 
   $('#mapDiv').on('shown.bs.collapse', function() {
-    if (!$(this).hasClass('initialized')) {
+    if (!$(this).hasClass('initialized') || $(this).hasClass('to-be-resized')) {
       initializeMap();
+    }
+    if (!$(this).hasClass('initialized')) {
+      // Vanilla JS way to listen for resizing of the window
+      // and adjust map bounds
+      window.addEventListener('resize', function(e) {
+        //Make sure the map bounds get updated on page resize IF SHOWING
+        if ($('#mapDiv').hasClass('in')) {
+          map.fitBounds(mapBounds);
+        }
+        else {
+          //If map isn't showing, resize it later
+          $('#mapDiv').addClass('to-be-resized');
+        }
+      });
       $(this).addClass('initialized');
+    }
+    if ($(this).hasClass('to-be-resized')) {
+      $(this).removeClass('to-be-resized');
     }
   });
 });
@@ -269,7 +286,7 @@ Uncomment the code below when you're ready to implement a Google Map!
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-window.addEventListener('resize', function(e) {
+//window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
- map.fitBounds(mapBounds);
-});
+ //map.fitBounds(mapBounds);
+//});
