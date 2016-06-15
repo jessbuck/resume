@@ -122,13 +122,17 @@ a {
 }
 
 #role {
-  padding-left: 0;
+  padding: 5px 0;
+}
+
+hr {
+  margin: 5px 0 10px 0;
 }
 
 .welcome-message {
-  font-size: 18px;
+  font-size: 16px;
   color: #f3f3f3;
-  line-height: 28px;
+  line-height: 24px;
   margin: 10px;
 }
 
@@ -179,7 +183,7 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px;
+  padding: 5px;
 }
 
 .center-content {
@@ -254,7 +258,7 @@ span {
   }
 }
 
-.skill-icon, .social-icon {
+.social-icon {
   display: block;
 }
 
@@ -264,12 +268,12 @@ span {
 
 .skill-icon {
   background-color: #fff;
-  height: 60px;
-  width: 60px;
-  padding: 5px;
-  margin-bottom: 5px;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
+  height: 40px;
+  width: 40px;
+  padding: 2px;
+  margin: 5px;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
   border: 0px solid #000000;
 }
