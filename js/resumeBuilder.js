@@ -1,11 +1,11 @@
 // Create resume page content
 var bio = new Bio();
 var work = new Work();
-var projects = new Projects();
+//var projects = new Projects();
 var education = new Education();
 bio.display();
 work.display();
-projects.display();
+//projects.display();
 education.display();
 
 $("#mapDiv").append(googleMap);
@@ -20,6 +20,8 @@ function Bio() {
   var bio = {};
   addBioDetails(bio);
   bio.display = function() {
+    $('#page-title').text(bio.name + " | " + bio.role);
+
     var formattedName = HTMLheaderName.replace("%data%",bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
     $("#header").prepend(formattedRole);
@@ -27,9 +29,10 @@ function Bio() {
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    // var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
+    // $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
+        $("#topContacts").append(formattedMobile + formattedEmail + formattedLocation);
 
     var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedPic);
@@ -46,7 +49,7 @@ function Bio() {
     }
 
     $('#footerContacts').append('<li><a href="mailto:' + bio.contacts.email + '"><span class="social-icon zocial-email"></span>Email</a></li>');
-    $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
+    // $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
   };
   return bio;
 }
@@ -163,11 +166,11 @@ function Education() {
 // Functions to fill resume objects
 function addBioDetails(bio) {
   bio.name = "Jess Buck";
-  bio.role = "Front-End Developer";
+  bio.role = "Software Developer";
   bio.contacts = {};
   bio.contacts.mobile = "732-654-2825";
   bio.contacts.email = "jessica.e.buck@gmail.com";
-  bio.contacts.github = "jess19";
+  // bio.contacts.github = "jess19";
   bio.contacts.location = "Red Bank, NJ";
   bio.welcomeMessage = "Innovative software developer with a diverse skillset offering over four years of experience in mobile and web application development. Strong ability to research and implement cost-effective solutions throughout the software development lifecycle. Dedicated to delivering efficient, intuitive, scalable applications. ";
   bio.skills = [];
@@ -311,7 +314,7 @@ function addOnlineCourses(education) {
   var onlineCourse = {};
   onlineCourse.title = "Front-End Web Developer Nanodegree";
   onlineCourse.school = "Udacity";
-  onlineCourse.date = "May 2016 - June 2016";
+  onlineCourse.date = "May 2016 - Present";
   onlineCourse.url = "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001";
   education.onlineCourses.push(onlineCourse);
 }

@@ -18,9 +18,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 <head>
     <!-- This tells the browser how to read the document. -->
     <meta charset="utf-8">
-
+    <link id="page-icon" rel="icon" href="images/favicon.png">
     <!-- Tells the browser what the title of this page should be. -->
-    <title>Resume</title>
+    <title id="page-title">Resume</title>
 
 
     <!-- Load the page styles. -->
@@ -165,19 +165,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
             document.getElementById('header').style.display = 'none';
         }
         if (document.getElementsByClassName('work-entry').length === 0) {
-            document.getElementById('workExperience').style.display = 'none';
+            document.getElementById('work-panel').style.display = 'none';
         }
         if (document.getElementsByClassName('project-entry').length === 0) {
-            document.getElementById('projects').style.display = 'none';
+            document.getElementById('projects-panel').style.display = 'none';
         }
         if (document.getElementsByClassName('education-entry').length === 0) {
-            document.getElementById('education').style.display = 'none';
+            document.getElementById('education-panel').style.display = 'none';
         }
         if (document.getElementsByClassName('flex-item').length === 0) {
             document.getElementById('lets-connect').style.display = 'none';
         }
         if (document.getElementById('map') === null) {
-            document.getElementById('mapDiv').style.display = 'none';
+            document.getElementById('map-panel').style.display = 'none';
         }
     </script>
 </body>
