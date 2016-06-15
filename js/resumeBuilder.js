@@ -1,5 +1,3 @@
-$('#projects-panel').hide();
-
 // Create resume page content
 var bio = new Bio();
 var work = new Work();
