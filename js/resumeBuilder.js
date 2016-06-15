@@ -10,10 +10,6 @@ education.display();
 
 $("#mapDiv").append(googleMap);
 
-$('#footerContacts').append('<li><a href="mailto:jessica.e.buck@gmail.com"><span class="social-icon zocial-email"></span>Email</a></li>');
-$('#footerContacts').append('<li><a href="https://github.com/jess19"><span class="social-icon zocial-github"></span>GitHub</a></li>');
-$('#footerContacts').append('<li><a href="https://www.linkedin.com/in/jessicaebuck"><span class="social-icon zocial-linkedin"></span>LinkedIn</a></li>');
-
 // ------------------------------------------------------- //
 // Resume objects
 /**
@@ -48,6 +44,9 @@ function Bio() {
         $("#skills").append(formattedSkill);
       }
     }
+
+    $('#footerContacts').append('<li><a href="mailto:' + bio.contacts.email + '"><span class="social-icon zocial-email"></span>Email</a></li>');
+    $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
   };
   return bio;
 }
@@ -128,7 +127,7 @@ function Education() {
         $(".education-entry:last").append(formattedLocation);
         var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[schoolIndex].major);
         $(".education-entry:last").append(formattedMajor);
-        if (education.schools[schoolIndex].minor) {          
+        if (education.schools[schoolIndex].minor) {
           var formattedMinor = HTMLschoolMinor.replace("%data%", education.schools[schoolIndex].minor);
           $(".education-entry:last").append(formattedMinor);
         }
