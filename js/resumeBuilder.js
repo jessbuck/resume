@@ -49,7 +49,7 @@ function Bio() {
     }
 
     $('#footerContacts').append('<li><a href="mailto:' + bio.contacts.email + '"><span class="social-icon zocial-email"></span>Email</a></li>');
-    $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
+    // $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
   };
   return bio;
 }
