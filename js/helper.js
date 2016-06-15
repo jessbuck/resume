@@ -72,6 +72,22 @@ $(document).ready(function() {
     $name.html(iName);
   });
 
+  $('.section-heading').click(function() {
+    // var section = $(this).parent();
+    var sectionId = '#' + $(this).next().attr('id');
+    console.log("sectionId: " + sectionId);
+    if ($(sectionId).hasClass('in')) {
+      $(sectionId).collapse('hide');
+    }
+    else {
+      $(sectionId).collapse('show');
+    }
+  });
+
+  $('.section-heading').mouseup(function() {
+    $(this).blur();
+  });
+
   $('.section-body').on('hide.bs.collapse', function () {
     var heading = $(this).prev();
     var span = heading.find('span');

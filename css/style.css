@@ -200,6 +200,10 @@ ul {
     display: none;
 }
 
+.section-heading:focus {
+  outline: none;
+}
+
 img {
     padding: 10px;
 }
