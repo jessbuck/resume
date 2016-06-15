@@ -125,11 +125,17 @@ function Education() {
         $(".education-entry:last").append(formattedDates);
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[schoolIndex].location);
         $(".education-entry:last").append(formattedLocation);
-        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[schoolIndex].majors);
-        $(".education-entry:last").append(formattedMajor);
-        if (education.schools[schoolIndex].minors) {
-          var formattedMinor = HTMLschoolMinor.replace("%data%", education.schools[schoolIndex].minors);
-          $(".education-entry:last").append(formattedMinor);
+        for(var majorIndex in education.schools[schoolIndex].majors) {
+          if (education.schools[schoolIndex].majors.hasOwnProperty(majorIndex)) {
+            var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[schoolIndex].majors[majorIndex]);
+            $(".education-entry:last").append(formattedMajor);
+          }
+        }
+        for(var minorIndex in education.schools[schoolIndex].minors) {
+          if (education.schools[schoolIndex].minors.hasOwnProperty(minorIndex)) {
+            var formattedMinor = HTMLschoolMinor.replace("%data%", education.schools[schoolIndex].minors[minorIndex]);
+            $(".education-entry:last").append(formattedMinor);
+          }
         }
         var formattedschoolDescription = HTMLschoolDescription.replace("%data%", education.schools[schoolIndex].description);
         $(".education-entry:last").append(formattedschoolDescription);
@@ -273,8 +279,8 @@ function addSchoolDetails(education) {
   school1.dates = "September 2011 - January 2014";
   school1.location = "West Long Branch, NJ";
   school1.degree = "Bachelor of Science";
-  school1.majors = "Computer Science";
-  school1.minors = "Mathematics";
+  school1.majors = ["Computer Science"];
+  school1.minors = ["Mathematics"];
   school1.description = "•	Major GPA 3.6, overall GPA 3.5" + "<br/>" +
   "•	Member of Upsilon Pi Epsilon International Honor Society for the Computing and Information Disciplines" + "<br/>" +
   "•	Member of the School of Science Student and Alumni Advisory Committee" + "<br/>" +
@@ -287,7 +293,7 @@ function addSchoolDetails(education) {
   school2.dates = "September 2003 - December 2005";
   school2.location = "Lincroft, NJ";
   school2.degree = "Associate of Arts";
-  school2.majors = "English";
+  school2.majors = ["English"];
   school2.description = "•	Major GPA 4.0, overall GPA 3.9" + "<br/>" +
   "•	Member of Phi Theta Kappa International Honor Society";
   school2.url = "http://www.brookdalecc.edu";
