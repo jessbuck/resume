@@ -154,8 +154,6 @@ function Education() {
         $(".education-entry:last").append(formattedTitle + formattedSchool);
         var formattedOnlineDate = HTMLonlineDates.replace("%data%", education.onlineCourses[courseIndex].date);
         $(".education-entry:last").append(formattedOnlineDate);
-        // var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[courseIndex].url);
-        // $(".education-entry:last").append(formattedUrl);
       }
     }
   };
