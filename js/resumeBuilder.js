@@ -149,8 +149,8 @@ function Education() {
         var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[courseIndex].title);
         var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[courseIndex].school);
         $(".education-entry:last").append(formattedTitle + formattedSchool);
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[courseIndex].dates);
-        $(".education-entry:last").append(formattedOnlineDates);
+        var formattedOnlineDate = HTMLonlineDates.replace("%data%", education.onlineCourses[courseIndex].date);
+        $(".education-entry:last").append(formattedOnlineDate);
         var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[courseIndex].url);
         $(".education-entry:last").append(formattedUrl);
       }
@@ -305,7 +305,7 @@ function addOnlineCourses(education) {
   var onlineCourse = {};
   onlineCourse.title = "Front-End Web Developer Nanodegree";
   onlineCourse.school = "Udacity";
-  onlineCourse.dates = "May 2016 - June 2016";
+  onlineCourse.date = "May 2016 - June 2016";
   onlineCourse.url = "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001";
   education.onlineCourses.push(onlineCourse);
 }
