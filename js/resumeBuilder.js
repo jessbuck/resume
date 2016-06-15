@@ -39,8 +39,8 @@ function Bio() {
 
     $("#header").append(HTMLskillsStart);
     for (var skillIndex in bio.skills) {
-      if (bio.skills.hasOwnProperty(skillIndex)) {
-        var formattedSkill = HTMLskills.replace("%data%", '<img class="skill-icon" src="' + bio.skills[skillIndex].icon + '" alt="' + bio.skills[skillIndex].name +'">'  + bio.skills[skillIndex].name);
+      if (bio.skills.hasOwnProperty(skillIndex) && bio.skillIcons.hasOwnProperty(skillIndex)) {
+        var formattedSkill = HTMLskills.replace("%data%", '<img class="skill-icon" src="' + bio.skillIcons[skillIndex] + '" alt="' + bio.skills[skillIndex] +'">'  + bio.skills[skillIndex]);
         $("#skills").append(formattedSkill);
       }
     }
@@ -48,6 +48,7 @@ function Bio() {
     $('#footerContacts').append('<li><a href="mailto:' + bio.contacts.email + '"><span class="social-icon zocial-email"></span>Email</a></li>');
     $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
   };
+  console.log(bio);
   return bio;
 }
 
@@ -164,36 +165,37 @@ function addBioDetails(bio) {
   bio.contacts.location = "Red Bank, NJ";
   bio.welcomeMessage = "Innovative software developer with a diverse skillset offering over four years of experience in mobile and web application development. Strong ability to research and implement cost-effective solutions throughout the software development lifecycle. Dedicated to delivering efficient, intuitive, scalable applications. ";
   bio.skills = [];
+  bio.skillIcons = [];
 
-  var skill = {};
-  skill.name = "HTML";
-  skill.icon = "images/icons/html5.svg";
+  var skill = "HTML";
+  var skillIcon = "images/icons/html5.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
-  skill = {};
-  skill.name = "CSS";
-  skill.icon = "images/icons/css3.svg";
+  skill = "CSS";
+  skillIcon = "images/icons/css3.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
-  skill = {};
-  skill.name = "JavaScript";
-  skill.icon = "images/icons/javascript.svg";
+  skill = "JavaScript";
+  skillIcon = "images/icons/javascript.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
-  skill = {};
-  skill.name = "Java";
-  skill.icon = "images/icons/java.svg";
+  skill = "Java";
+  skillIcon = "images/icons/java.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
-  skill = {};
-  skill.name = "C#";
-  skill.icon = "images/icons/csharp.svg";
+  skill = "C#";
+  skillIcon = "images/icons/csharp.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
-  skill = {};
-  skill.name = "PHP";
-  skill.icon = "images/icons/php.svg";
+  skill = "PHP";
+  skillIcon = "images/icons/php.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
   bio.biopic = "images/me.jpg";
 }
