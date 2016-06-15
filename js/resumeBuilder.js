@@ -261,30 +261,30 @@ function addProjectDetails(projects) {
 }
 
 function addSchoolDetails(education) {
-    education.schools = [];
-    var school1 = {};
-    school1.name = "Monmouth University";
-    school1.dates = "September 2011 - January 2014";
-    school1.location = "West Long Branch, NJ";
-    school1.degree = "Bachelor of Science";
-    school1.major = "Computer Science";
-    education.schools.push(school1);
+  education.schools = [];
+  var school1 = {};
+  school1.name = "Monmouth University";
+  school1.dates = "September 2011 - January 2014";
+  school1.location = "West Long Branch, NJ";
+  school1.degree = "Bachelor of Science";
+  school1.major = "Computer Science";
+  education.schools.push(school1);
 
-    var school2 = {};
-    school2.name = "Brookdale Community College";
-    school2.dates = "September 2003 - December 2005";
-    school2.location = "Lincroft, NJ";
-    school2.degree = "Associate of Arts";
-    school2.major = "English";
-    education.schools.push(school2);
+  var school2 = {};
+  school2.name = "Brookdale Community College";
+  school2.dates = "September 2003 - December 2005";
+  school2.location = "Lincroft, NJ";
+  school2.degree = "Associate of Arts";
+  school2.major = "English";
+  education.schools.push(school2);
 }
 
 function addOnlineCourses(education) {
-    education.onlineCourses = [];
-    var onlineCourse = {};
-    onlineCourse.title = "Front-End Web Developer Nanodegree";
-    onlineCourse.school = "Udacity";
-    onlineCourse.dates = "May 2016 - June 2016";
-    onlineCourse.url = "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001";
-    education.onlineCourses.push(onlineCourse);
+  education.onlineCourses = [];
+  var onlineCourse = {};
+  onlineCourse.title = "Front-End Web Developer Nanodegree";
+  onlineCourse.school = "Udacity";
+  onlineCourse.dates = "May 2016 - June 2016";
+  onlineCourse.url = "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001";
+  education.onlineCourses.push(onlineCourse);
 }

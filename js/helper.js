@@ -69,6 +69,48 @@ $(document).ready(function() {
     var iName = inName($name.text()) || function(){};
     $name.html(iName);
   });
+
+  $('.section-body').on('hide.bs.collapse', function () {
+    var heading = $(this).prev();
+    var span = heading.find('span');
+    span.removeClass('glyphicon-menu-up');
+    span.addClass('glyphicon-menu-down');
+  });
+
+  $('.section-body').on('show.bs.collapse', function() {
+    var heading = $(this).prev();
+    var span = heading.find('span');
+    span.removeClass('glyphicon-menu-down');
+    span.addClass('glyphicon-menu-up');
+
+    $('html,body').animate({
+      scrollTop: $(this).parent().offset().top
+    }, 1000);
+  });
+
+  $('#mapDiv').on('shown.bs.collapse', function() {
+    if (!$(this).hasClass('initialized') || $(this).hasClass('to-be-resized')) {
+      initializeMap();
+    }
+    if (!$(this).hasClass('initialized')) {
+      // Vanilla JS way to listen for resizing of the window
+      // and adjust map bounds
+      window.addEventListener('resize', function(e) {
+        //Make sure the map bounds get updated on page resize IF SHOWING
+        if ($('#mapDiv').hasClass('in')) {
+          map.fitBounds(mapBounds);
+        }
+        else {
+          //If map isn't showing, resize it later
+          $('#mapDiv').addClass('to-be-resized');
+        }
+      });
+      $(this).addClass('initialized');
+    }
+    if ($(this).hasClass('to-be-resized')) {
+      $(this).removeClass('to-be-resized');
+    }
+  });
 });
 
 /*
@@ -240,11 +282,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-window.addEventListener('load', initializeMap);
+//window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-window.addEventListener('resize', function(e) {
+//window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
- map.fitBounds(mapBounds);
-});
+ //map.fitBounds(mapBounds);
+//});
