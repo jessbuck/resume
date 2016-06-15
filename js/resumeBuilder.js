@@ -63,6 +63,7 @@ function Work() {
       if (work.jobs.hasOwnProperty(jobIndex)) {
         $("#workExperience").append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[jobIndex].employer);
+        formattedEmployer = formattedEmployer.replace("#\"", work.jobs[jobIndex].url + "\"target=\"_blank\"");
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[jobIndex].title);
         $(".work-entry:last").append(formattedEmployer + formattedTitle);
         var formattedDates = HTMLworkDates.replace("%data%", work.jobs[jobIndex].dates);
@@ -119,6 +120,7 @@ function Education() {
       if (education.schools.hasOwnProperty(schoolIndex)) {
         $("#education").append(HTMLschoolStart);
         var formattedName = HTMLschoolName.replace("%data%", education.schools[schoolIndex].name);
+        formattedName = formattedName.replace("#\"", education.schools[schoolIndex].url + "\"target=\"_blank\"");
         var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[schoolIndex].degree);
         $(".education-entry:last").append(formattedName + formattedDegree);
         var formattedDates = HTMLschoolDates.replace("%data%", education.schools[schoolIndex].dates);
@@ -147,12 +149,11 @@ function Education() {
       if (education.onlineCourses.hasOwnProperty(courseIndex)) {
         $("#education").append(HTMLschoolStart);
         var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[courseIndex].title);
+        formattedTitle = formattedTitle.replace("#\"", education.onlineCourses[courseIndex].url + "\"target=\"_blank\"");
         var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[courseIndex].school);
         $(".education-entry:last").append(formattedTitle + formattedSchool);
         var formattedOnlineDate = HTMLonlineDates.replace("%data%", education.onlineCourses[courseIndex].date);
         $(".education-entry:last").append(formattedOnlineDate);
-        var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[courseIndex].url);
-        $(".education-entry:last").append(formattedUrl);
       }
     }
   };
@@ -218,6 +219,7 @@ function addWorkDetails(work) {
   "•	Added an invoice feature to an internal time-tracking tool using Ruby on Rails." + "<br/>" +
   "•	Resolved user interaction and cross-browser compatibility issues for an externally developed web project." + "<br/>" +
   "•	Made user interface modifications to an existing iOS application.";
+  job.url = "http://hybridhealth.com/";
   work.jobs.push(job);
 
   job = {};
@@ -228,6 +230,7 @@ function addWorkDetails(work) {
   job.description =
   "•	Refactored and rewrote legacy system applications to support a new user interface." + "<br/>" +
   "•	Contributed to design decisions to increase efficiency and usability.";
+  job.url = "http://www.hcsinteractant.com/";
   work.jobs.push(job);
 
   job = {};
@@ -238,27 +241,30 @@ function addWorkDetails(work) {
   job.description =
   "•	Implemented a new feature for an internal web application." + "<br/>" +
   "•	Assisted with design and researched PHP libraries and jQuery plugins to evaluate for use with the application.";
+  job.url = "http://etadventures.com/";
   work.jobs.push(job);
 
   job = {};
   job.title = "Student Research Assistant";
-  job.employer = "Monmouth University";
+  job.employer = "Monmouth University - Department of Computer Science and Software Engineering";
   job.location = "West Long Branch, NJ";
   job.dates = "June 2012 - August 2013";
   job.description =
   "•	Developed an Android mobile application and backend server to guide users on a campus tour and abstracted it into one for general tourism purposes." + "<br/>" +
   "•	Presented the mobile application to an audience of trustees, faculty and students at the Summer Research Program (SRP) Symposium." + "<br/>" +
   "•	Met with the MU Admissions Office to discuss potential use of the application for the annual Open House at Admissions’ request after the SRP Symposium presentation.";
+  job.url = "http://www.monmouth.edu/school-of-science/department-of-computer-science-and-software-engineering.aspx";
   work.jobs.push(job);
 
   job = {};
   job.title = "Software Prototype Developer";
-  job.employer = "Rapid Response Instutute at Monmouth University";
+  job.employer = "Monmouth University Rapid Response Institute";
   job.location = "West Long Branch, NJ";
   job.dates = "December 2011 - March 2012";
   job.description =
   "•	Developed Android applications designed to manage shelter resources and enable state level emergency operations officials to direct the general population to shelters. " + "<br/>" +
   "•	Created user guides to document the applications.";
+  job.url = "https://www.youtube.com/channel/UCGnniXQQ-ua_XXhN1xjuF8w";
   work.jobs.push(job);
 }
 
