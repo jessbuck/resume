@@ -69,9 +69,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         </div>
         <div style="clear: both;"></div>
     </header>
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-      <div class="gray panel panel-default">
-        <div class="panel-heading" role="tab" id="heading-work">
+    <div id="sections-panel-group" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div id="work-panel" class="gray panel panel-default">
+        <div class="panel-heading" role="tab" id="heading-work" tabindex="0">
           <h2>
             Work Experience
             <a class="section-collapse" role="button" data-toggle="collapse" data-parent="#accordion" href="#workExperience" aria-expanded="true" aria-controls="workExperience">
@@ -82,8 +82,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         <div id="workExperience" class="section-body panel-body collapse" role="tabpanel" aria-labelledby="heading-work">
         </div>
       </div>
-      <div class="gray panel panel-default">
-        <div class="panel-heading" role="tab" id="heading-projects">
+      <div id="projects-panel" class="gray panel panel-default">
+        <div class="panel-heading" role="tab" id="heading-projects"  tabindex="1">
           <h2>Projects
           <a class="section-collapse" role="button" data-toggle="collapse" data-parent="#accordion" href="#projects" aria-expanded="true" aria-controls="projects">
             <span class="glyphicon glyphicon-menu-down"></span>
@@ -93,8 +93,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         <div id="projects" class="section-body panel-body collapse" role="tabpanel" aria-labelledby="heading-projects">
         </div>
       </div>
-      <div class="gray panel panel-default">
-        <div class="panel-heading" role="tab" id="heading-education">
+      <div id="education-panel" class="gray panel panel-default">
+        <div class="panel-heading" role="tab" id="heading-education"  tabindex="2">
           <h2>Education
           <a class="section-collapse" role="button" data-toggle="collapse" data-parent="#accordion" href="#education" aria-expanded="true" aria-controls="education">
             <span class="glyphicon glyphicon-menu-down"></span>
@@ -104,8 +104,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         <div id="education"  class="section-body panel-body collapse" role="tabpanel" aria-labelledby="heading-education">
         </div>
       </div>
-      <div class="gray panel panel-default">
-        <div class="panel-heading" role="tab" id="heading-map">
+      <div id="map-panel" class="gray panel panel-default">
+        <div class="panel-heading" role="tab" id="heading-map"  tabindex="3">
           <h2>Where I've Lived and Worked
           <a class="section-collapse" role="button" data-toggle="collapse" data-parent="#accordion" href="#mapDiv" aria-expanded="true" aria-controls="mapDiv">
             <span class="glyphicon glyphicon-menu-down"></span>

@@ -82,6 +82,10 @@ $(document).ready(function() {
     var span = heading.find('span');
     span.removeClass('glyphicon-menu-down');
     span.addClass('glyphicon-menu-up');
+
+    $('html,body').animate({
+      scrollTop: $(this).parent().offset().top
+    }, 1000);
   });
 
   $('#mapDiv').on('shown.bs.collapse', function() {
