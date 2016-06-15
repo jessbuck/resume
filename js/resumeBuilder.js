@@ -22,6 +22,8 @@ function Bio() {
   var bio = {};
   addBioDetails(bio);
   bio.display = function() {
+    $('#page-title').text(bio.name + " | " + bio.role);
+
     var formattedName = HTMLheaderName.replace("%data%",bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
     $("#header").prepend(formattedRole);
@@ -166,7 +168,7 @@ function Education() {
 // Functions to fill resume objects
 function addBioDetails(bio) {
   bio.name = "Jess Buck";
-  bio.role = "Front-End Developer";
+  bio.role = "Software Developer";
   bio.contacts = {};
   bio.contacts.mobile = "732-654-2825";
   bio.contacts.email = "jessica.e.buck@gmail.com";
