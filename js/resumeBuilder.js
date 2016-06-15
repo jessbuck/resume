@@ -48,7 +48,6 @@ function Bio() {
     $('#footerContacts').append('<li><a href="mailto:' + bio.contacts.email + '"><span class="social-icon zocial-email"></span>Email</a></li>');
     $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
   };
-  console.log(bio);
   return bio;
 }
 
@@ -280,6 +279,7 @@ function addSchoolDetails(education) {
   "•	Member of Upsilon Pi Epsilon International Honor Society for the Computing and Information Disciplines" + "<br/>" +
   "•	Member of the School of Science Student and Alumni Advisory Committee" + "<br/>" +
   "•	Member of the School of Science Peer Mentor Program";
+  school1.url = "http://www.monmouth.edu";
   education.schools.push(school1);
 
   var school2 = {};
@@ -290,6 +290,7 @@ function addSchoolDetails(education) {
   school2.major = "English";
   school2.description = "•	Major GPA 4.0, overall GPA 3.9" + "<br/>" +
   "•	Member of Phi Theta Kappa International Honor Society";
+  school2.url = "http://www.brookdalecc.edu";
   education.schools.push(school2);
 }
 
