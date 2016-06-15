@@ -128,6 +128,12 @@ function Education() {
         $(".education-entry:last").append(formattedLocation);
         var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[schoolIndex].major);
         $(".education-entry:last").append(formattedMajor);
+        if (education.schools[schoolIndex].minor) {          
+          var formattedMinor = HTMLschoolMinor.replace("%data%", education.schools[schoolIndex].minor);
+          $(".education-entry:last").append(formattedMinor);
+        }
+        var formattedschoolDescription = HTMLschoolDescription.replace("%data%", education.schools[schoolIndex].description);
+        $(".education-entry:last").append(formattedschoolDescription);
       }
     }
 
@@ -268,6 +274,11 @@ function addSchoolDetails(education) {
   school1.location = "West Long Branch, NJ";
   school1.degree = "Bachelor of Science";
   school1.major = "Computer Science";
+  school1.minor = "Mathematics";
+  school1.description = "•	Major GPA 3.6, overall GPA 3.5" + "<br/>" +
+  "•	Member of Upsilon Pi Epsilon International Honor Society for the Computing and Information Disciplines" + "<br/>" +
+  "•	Member of the School of Science Student and Alumni Advisory Committee" + "<br/>" +
+  "•	Member of the School of Science Peer Mentor Program";
   education.schools.push(school1);
 
   var school2 = {};
@@ -276,6 +287,8 @@ function addSchoolDetails(education) {
   school2.location = "Lincroft, NJ";
   school2.degree = "Associate of Arts";
   school2.major = "English";
+  school2.description = "•	Major GPA 4.0, overall GPA 3.9" + "<br/>" +
+  "•	Member of Phi Theta Kappa International Honor Society";
   education.schools.push(school2);
 }
 
