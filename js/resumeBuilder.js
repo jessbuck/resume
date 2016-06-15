@@ -10,10 +10,6 @@ education.display();
 
 $("#mapDiv").append(googleMap);
 
-$('#footerContacts').append('<li><a href="mailto:jessica.e.buck@gmail.com"><span class="social-icon zocial-email"></span>Email</a></li>');
-$('#footerContacts').append('<li><a href="https://github.com/jess19"><span class="social-icon zocial-github"></span>GitHub</a></li>');
-$('#footerContacts').append('<li><a href="https://www.linkedin.com/in/jessicaebuck"><span class="social-icon zocial-linkedin"></span>LinkedIn</a></li>');
-
 // ------------------------------------------------------- //
 // Resume objects
 /**
@@ -43,11 +39,14 @@ function Bio() {
 
     $("#header").append(HTMLskillsStart);
     for (var skillIndex in bio.skills) {
-      if (bio.skills.hasOwnProperty(skillIndex)) {
-        var formattedSkill = HTMLskills.replace("%data%", '<img class="skill-icon" src="' + bio.skills[skillIndex].icon + '" alt="' + bio.skills[skillIndex].name +'">'  + bio.skills[skillIndex].name);
+      if (bio.skills.hasOwnProperty(skillIndex) && bio.skillIcons.hasOwnProperty(skillIndex)) {
+        var formattedSkill = HTMLskills.replace("%data%", '<img class="skill-icon" src="' + bio.skillIcons[skillIndex] + '" alt="' + bio.skills[skillIndex] +'">'  + bio.skills[skillIndex]);
         $("#skills").append(formattedSkill);
       }
     }
+
+    $('#footerContacts').append('<li><a href="mailto:' + bio.contacts.email + '"><span class="social-icon zocial-email"></span>Email</a></li>');
+    $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
   };
   return bio;
 }
@@ -126,11 +125,17 @@ function Education() {
         $(".education-entry:last").append(formattedDates);
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[schoolIndex].location);
         $(".education-entry:last").append(formattedLocation);
-        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[schoolIndex].major);
-        $(".education-entry:last").append(formattedMajor);
-        if (education.schools[schoolIndex].minor) {          
-          var formattedMinor = HTMLschoolMinor.replace("%data%", education.schools[schoolIndex].minor);
-          $(".education-entry:last").append(formattedMinor);
+        for(var majorIndex in education.schools[schoolIndex].majors) {
+          if (education.schools[schoolIndex].majors.hasOwnProperty(majorIndex)) {
+            var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[schoolIndex].majors[majorIndex]);
+            $(".education-entry:last").append(formattedMajor);
+          }
+        }
+        for(var minorIndex in education.schools[schoolIndex].minors) {
+          if (education.schools[schoolIndex].minors.hasOwnProperty(minorIndex)) {
+            var formattedMinor = HTMLschoolMinor.replace("%data%", education.schools[schoolIndex].minors[minorIndex]);
+            $(".education-entry:last").append(formattedMinor);
+          }
         }
         var formattedschoolDescription = HTMLschoolDescription.replace("%data%", education.schools[schoolIndex].description);
         $(".education-entry:last").append(formattedschoolDescription);
@@ -144,8 +149,8 @@ function Education() {
         var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[courseIndex].title);
         var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[courseIndex].school);
         $(".education-entry:last").append(formattedTitle + formattedSchool);
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[courseIndex].dates);
-        $(".education-entry:last").append(formattedOnlineDates);
+        var formattedOnlineDate = HTMLonlineDates.replace("%data%", education.onlineCourses[courseIndex].date);
+        $(".education-entry:last").append(formattedOnlineDate);
         var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[courseIndex].url);
         $(".education-entry:last").append(formattedUrl);
       }
@@ -165,36 +170,37 @@ function addBioDetails(bio) {
   bio.contacts.location = "Red Bank, NJ";
   bio.welcomeMessage = "Innovative software developer with a diverse skillset offering over four years of experience in mobile and web application development. Strong ability to research and implement cost-effective solutions throughout the software development lifecycle. Dedicated to delivering efficient, intuitive, scalable applications. ";
   bio.skills = [];
+  bio.skillIcons = [];
 
-  var skill = {};
-  skill.name = "HTML";
-  skill.icon = "images/icons/html5.svg";
+  var skill = "HTML";
+  var skillIcon = "images/icons/html5.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
-  skill = {};
-  skill.name = "CSS";
-  skill.icon = "images/icons/css3.svg";
+  skill = "CSS";
+  skillIcon = "images/icons/css3.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
-  skill = {};
-  skill.name = "JavaScript";
-  skill.icon = "images/icons/javascript.svg";
+  skill = "JavaScript";
+  skillIcon = "images/icons/javascript.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
-  skill = {};
-  skill.name = "Java";
-  skill.icon = "images/icons/java.svg";
+  skill = "Java";
+  skillIcon = "images/icons/java.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
-  skill = {};
-  skill.name = "C#";
-  skill.icon = "images/icons/csharp.svg";
+  skill = "C#";
+  skillIcon = "images/icons/csharp.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
-  skill = {};
-  skill.name = "PHP";
-  skill.icon = "images/icons/php.svg";
+  skill = "PHP";
+  skillIcon = "images/icons/php.svg";
   bio.skills.push(skill);
+  bio.skillIcons.push(skillIcon);
 
   bio.biopic = "images/me.jpg";
 }
@@ -273,12 +279,13 @@ function addSchoolDetails(education) {
   school1.dates = "September 2011 - January 2014";
   school1.location = "West Long Branch, NJ";
   school1.degree = "Bachelor of Science";
-  school1.major = "Computer Science";
-  school1.minor = "Mathematics";
+  school1.majors = ["Computer Science"];
+  school1.minors = ["Mathematics"];
   school1.description = "•	Major GPA 3.6, overall GPA 3.5" + "<br/>" +
   "•	Member of Upsilon Pi Epsilon International Honor Society for the Computing and Information Disciplines" + "<br/>" +
   "•	Member of the School of Science Student and Alumni Advisory Committee" + "<br/>" +
   "•	Member of the School of Science Peer Mentor Program";
+  school1.url = "http://www.monmouth.edu";
   education.schools.push(school1);
 
   var school2 = {};
@@ -286,9 +293,10 @@ function addSchoolDetails(education) {
   school2.dates = "September 2003 - December 2005";
   school2.location = "Lincroft, NJ";
   school2.degree = "Associate of Arts";
-  school2.major = "English";
+  school2.majors = ["English"];
   school2.description = "•	Major GPA 4.0, overall GPA 3.9" + "<br/>" +
   "•	Member of Phi Theta Kappa International Honor Society";
+  school2.url = "http://www.brookdalecc.edu";
   education.schools.push(school2);
 }
 
@@ -297,7 +305,7 @@ function addOnlineCourses(education) {
   var onlineCourse = {};
   onlineCourse.title = "Front-End Web Developer Nanodegree";
   onlineCourse.school = "Udacity";
-  onlineCourse.dates = "May 2016 - June 2016";
+  onlineCourse.date = "May 2016 - June 2016";
   onlineCourse.url = "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001";
   education.onlineCourses.push(onlineCourse);
 }

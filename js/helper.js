@@ -75,7 +75,6 @@ $(document).ready(function() {
   $('.section-heading').click(function() {
     // var section = $(this).parent();
     var sectionId = '#' + $(this).next().attr('id');
-    console.log("sectionId: " + sectionId);
     if ($(sectionId).hasClass('in')) {
       $(sectionId).collapse('hide');
     }
