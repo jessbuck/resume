@@ -29,10 +29,9 @@ function Bio() {
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    // var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    // $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
-        $("#topContacts").append(formattedMobile + formattedEmail + formattedLocation);
+    $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
 
     var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedPic);
@@ -49,7 +48,7 @@ function Bio() {
     }
 
     $('#footerContacts').append('<li><a href="mailto:' + bio.contacts.email + '"><span class="social-icon zocial-email"></span>Email</a></li>');
-    // $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
+    $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
   };
   return bio;
 }
@@ -170,7 +169,7 @@ function addBioDetails(bio) {
   bio.contacts = {};
   bio.contacts.mobile = "732-654-2825";
   bio.contacts.email = "jessica.e.buck@gmail.com";
-  // bio.contacts.github = "jess19";
+  bio.contacts.github = "jessbuck";
   bio.contacts.location = "Red Bank, NJ";
   bio.welcomeMessage = "Innovative software developer with a diverse skillset offering over four years of experience in mobile and web application development. Strong ability to research and implement cost-effective solutions throughout the software development lifecycle. Dedicated to delivering efficient, intuitive, scalable applications. ";
   bio.skills = [];
