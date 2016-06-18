@@ -1,11 +1,11 @@
 // Create resume page content
 var bio = new Bio();
 var work = new Work();
-//var projects = new Projects();
+var projects = new Projects();
 var education = new Education();
 bio.display();
 work.display();
-//projects.display();
+projects.display();
 education.display();
 
 $("#mapDiv").append(googleMap);
@@ -92,6 +92,7 @@ function Projects() {
       if (projects.projects.hasOwnProperty(projectIndex)) {
         $("#projects").append(HTMLprojectStart);
         var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[projectIndex].title);
+        formattedTitle = formattedTitle.replace("#\"", projects.projects[projectIndex].url + "\"target=\"_blank\"");
         $(".project-entry:last").append(formattedTitle);
         var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[projectIndex].dates);
         $(".project-entry:last").append(formattedDates);
@@ -273,10 +274,11 @@ function addWorkDetails(work) {
 function addProjectDetails(projects) {
   projects.projects = [];
   var project = {};
-  project.title = "Sample Project";
+  project.title = "Interactive Resume";
+  project.url = "https://github.com/jessbuck/resume";
   project.dates = "June 2016";
-  project.description = "Sample Description";
-  project.images = ["images/sand.jpg", "images/sunrise.jpg", "images/shoe.jpg"];
+  project.description = "Interactive resume (this page) built as first project for the Udacity Front-End Web Developer Nanodegree.";
+  // project.images = ["images/sand.jpg", "images/sunrise.jpg", "images/shoe.jpg"];
   projects.projects.push(project);
 }
 
