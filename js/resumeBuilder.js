@@ -1,11 +1,11 @@
 // Create resume page content
 var bio = new Bio();
 var work = new Work();
-//var projects = new Projects();
+var projects = new Projects();
 var education = new Education();
 bio.display();
 work.display();
-//projects.display();
+projects.display();
 education.display();
 
 $("#mapDiv").append(googleMap);
@@ -29,10 +29,9 @@ function Bio() {
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    // var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    // $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
-        $("#topContacts").append(formattedMobile + formattedEmail + formattedLocation);
+    $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
 
     var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedPic);
@@ -49,7 +48,7 @@ function Bio() {
     }
 
     $('#footerContacts').append('<li><a href="mailto:' + bio.contacts.email + '"><span class="social-icon zocial-email"></span>Email</a></li>');
-    // $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
+    $('#footerContacts').append('<li><a href="https://github.com/' + bio.contacts.github + '"><span class="social-icon zocial-github"></span>GitHub</a></li>');
   };
   return bio;
 }
@@ -93,6 +92,7 @@ function Projects() {
       if (projects.projects.hasOwnProperty(projectIndex)) {
         $("#projects").append(HTMLprojectStart);
         var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[projectIndex].title);
+        formattedTitle = formattedTitle.replace("#\"", projects.projects[projectIndex].url + "\"target=\"_blank\"");
         $(".project-entry:last").append(formattedTitle);
         var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[projectIndex].dates);
         $(".project-entry:last").append(formattedDates);
@@ -170,7 +170,7 @@ function addBioDetails(bio) {
   bio.contacts = {};
   bio.contacts.mobile = "732-654-2825";
   bio.contacts.email = "jessica.e.buck@gmail.com";
-  // bio.contacts.github = "jess19";
+  bio.contacts.github = "jessbuck";
   bio.contacts.location = "Red Bank, NJ";
   bio.welcomeMessage = "Innovative software developer with a diverse skillset offering over four years of experience in mobile and web application development. Strong ability to research and implement cost-effective solutions throughout the software development lifecycle. Dedicated to delivering efficient, intuitive, scalable applications. ";
   bio.skills = [];
@@ -274,10 +274,11 @@ function addWorkDetails(work) {
 function addProjectDetails(projects) {
   projects.projects = [];
   var project = {};
-  project.title = "Sample Project";
+  project.title = "Interactive Resume";
+  project.url = "https://github.com/jessbuck/resume";
   project.dates = "June 2016";
-  project.description = "Sample Description";
-  project.images = ["images/sand.jpg", "images/sunrise.jpg", "images/shoe.jpg"];
+  project.description = "Interactive resume (this page) built as first project for the Udacity Front-End Web Developer Nanodegree.";
+  // project.images = ["images/sand.jpg", "images/sunrise.jpg", "images/shoe.jpg"];
   projects.projects.push(project);
 }
 
