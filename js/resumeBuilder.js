@@ -31,10 +31,10 @@ function Bio() {
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
+    // $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
 
     var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
-    $("#header").append(formattedPic);
+    // $("#header").append(formattedPic);
 
     var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedMessage);
