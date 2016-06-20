@@ -24,8 +24,8 @@ function Bio() {
 
     var formattedName = HTMLheaderName.replace("%data%",bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedName);
+    $("#header-titles").prepend(formattedRole);
+    $("#header-titles").prepend(formattedName);
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
