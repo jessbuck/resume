@@ -24,20 +24,20 @@ function Bio() {
 
     var formattedName = HTMLheaderName.replace("%data%",bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedName);
+    $("#header-titles").prepend(formattedRole);
+    $("#header-titles").prepend(formattedName);
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
+    // $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
 
     var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
-    $("#header").append(formattedPic);
+    $("#header-logo").append(formattedPic);
 
     var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedMessage);
+    $("#header-message").append(formattedMessage);
 
     $("#header").append(HTMLskillsStart);
     for (var skillIndex in bio.skills) {
@@ -207,7 +207,7 @@ function addBioDetails(bio) {
   bio.skills.push(skill);
   bio.skillIcons.push(skillIcon);
 
-  bio.biopic = "images/me.jpg";
+  bio.biopic = "images/logo.png";
 }
 
 function addWorkDetails(work) {
