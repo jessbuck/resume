@@ -34,7 +34,7 @@ function Bio() {
     // $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
 
     var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
-    // $("#header").append(formattedPic);
+    $("#header").append(formattedPic);
 
     var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedMessage);
@@ -207,7 +207,7 @@ function addBioDetails(bio) {
   bio.skills.push(skill);
   bio.skillIcons.push(skillIcon);
 
-  bio.biopic = "images/me.jpg";
+  bio.biopic = "images/logo.png";
 }
 
 function addWorkDetails(work) {
