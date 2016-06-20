@@ -34,10 +34,10 @@ function Bio() {
     // $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
 
     var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
-    $("#header").append(formattedPic);
+    $("#header-logo").append(formattedPic);
 
     var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedMessage);
+    $("#header-message").append(formattedMessage);
 
     $("#header").append(HTMLskillsStart);
     for (var skillIndex in bio.skills) {
