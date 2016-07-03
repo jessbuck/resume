@@ -236,10 +236,9 @@ function addWorkDetails(work) {
   job.dates = "October 2014 - January 2016";
   job.description =
   "•	Cloned iOS applications as Windows store apps using C# and XAML and added new features." + "<br/>" +
-  "•	Integrated a custom PDF viewer into a Windows application for consistency across the user base." + "<br/>" +
-  "•	Added an invoice feature to an internal time-tracking tool using Ruby on Rails." + "<br/>" +
-  "•	Resolved user interaction and cross-browser compatibility issues for an externally developed web project." + "<br/>" +
-  "•	Made user interface modifications to an existing iOS application.";
+  "•	Maintained source control with Git including documentation and bug-tracking using GitLab." + "<br/>" +
+  "•	Wrote PowerShell scripts for automated testing as an alternative to high-cost software licensing." + "<br/>" +
+  "•	Resolved user interaction and cross-browser compatibility issues for an externally developed web project.";
   job.url = "http://hybridhealth.com/";
   work.jobs.push(job);
 
@@ -249,8 +248,7 @@ function addWorkDetails(work) {
   job.location = "Wall Township, NJ";
   job.dates = "February 2014 – October 2014";
   job.description =
-  "•	Refactored and rewrote legacy system applications to support a new user interface." + "<br/>" +
-  "•	Contributed to design decisions to increase efficiency and usability.";
+  "•	Refactored and rewrote legacy system applications to support a new user interface.";
   job.url = "http://www.hcsinteractant.com/";
   work.jobs.push(job);
 
@@ -260,21 +258,9 @@ function addWorkDetails(work) {
   job.location = "Freehold, NJ";
   job.dates = "August 2013 - February 2014";
   job.description =
-  "•	Implemented a new feature for an internal web application." + "<br/>" +
+  "•	Implemented an HTML to Word document conversion feature for an internal web application using a LAMP stack." + "<br/>" +
   "•	Assisted with design and researched PHP libraries and jQuery plugins to evaluate for use with the application.";
   job.url = "http://etadventures.com/";
-  work.jobs.push(job);
-
-  job = {};
-  job.title = "Student Research Assistant";
-  job.employer = "Monmouth University - Department of Computer Science and Software Engineering";
-  job.location = "West Long Branch, NJ";
-  job.dates = "June 2012 - August 2013";
-  job.description =
-  "•	Developed an Android mobile application and backend server to guide users on a campus tour and abstracted it into one for general tourism purposes." + "<br/>" +
-  "•	Presented the mobile application to an audience of trustees, faculty and students at the Summer Research Program (SRP) Symposium." + "<br/>" +
-  "•	Met with the MU Admissions Office to discuss potential use of the application for the annual Open House at Admissions’ request after the SRP Symposium presentation.";
-  job.url = "http://www.monmouth.edu/school-of-science/department-of-computer-science-and-software-engineering.aspx";
   work.jobs.push(job);
 
   job = {};
@@ -286,6 +272,18 @@ function addWorkDetails(work) {
   "•	Developed Android applications designed to manage shelter resources and enable state level emergency operations officials to direct the general population to shelters. " + "<br/>" +
   "•	Created user guides to document the applications.";
   job.url = "https://www.youtube.com/channel/UCGnniXQQ-ua_XXhN1xjuF8w";
+  work.jobs.push(job);
+
+  job = {};
+  job.title = "Student Research Assistant";
+  job.employer = "Monmouth University - Department of Computer Science and Software Engineering";
+  job.location = "West Long Branch, NJ";
+  job.dates = "July 2011 - August 2013";
+  job.description =
+  "•	Developed an Android mobile application and backend server to guide users on a campus tour and abstracted it into one for general tourism purposes." + "<br/>" +
+  "•	Presented the mobile application to an audience of trustees, faculty and students at the Summer Research Program (SRP) Symposium." + "<br/>" +
+  "•	Met with the MU Admissions Office to discuss potential use of the application for the annual Open House at Admissions’ request after the SRP Symposium presentation.";
+  job.url = "http://www.monmouth.edu/school-of-science/department-of-computer-science-and-software-engineering.aspx";
   work.jobs.push(job);
 }
 
