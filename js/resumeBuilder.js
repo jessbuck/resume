@@ -8,6 +8,7 @@ work.display();
 projects.display();
 education.display();
 
+// TODO: Include map
 // $("#mapDiv").append(googleMap);
 
 // ------------------------------------------------------- //
