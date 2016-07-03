@@ -17,9 +17,11 @@
     <script src="js/jQuery.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/helper.js"></script>
-    <script src=
+
+    <!-- TODO: Include map -->
+    <!-- <script src=
     "http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCZkMPsxviVhLUqqba4XRHZG3pfyjb2jmU"
-    type="text/javascript"></script>
+    type="text/javascript"></script> -->
     <meta content="width=device-width" name="viewport">
 </head>
 <body>
@@ -75,7 +77,7 @@
                 "section-body panel-body collapse" id="education" role=
                 "tabpanel"></div>
             </div>
-            <div class="gray panel panel-default" id="map-panel">
+            <!-- <div class="gray panel panel-default" id="map-panel">
                 <div class="section-heading panel-heading" id="heading-map"
                 role="tab" tabindex="3">
                     <h2>Where I've Lived and Worked <a aria-controls="mapDiv"
@@ -87,7 +89,7 @@
                 <div aria-labelledby="heading-map" class=
                 "section-body panel-body collapse" id="mapDiv" role="tabpanel">
                 </div>
-            </div>
+            </div> -->
         </div>
         <footer>
             <div class="dark-gray" id="lets-connect">
@@ -119,9 +121,9 @@
         if (document.getElementsByClassName('flex-item').length === 0) {
             document.getElementById('lets-connect').style.display = 'none';
         }
-        if (document.getElementById('map') === null) {
-            document.getElementById('map-panel').style.display = 'none';
-        }
+        // if (document.getElementById('map') === null) {
+        //     document.getElementById('map-panel').style.display = 'none';
+        // }
     </script>
 </body>
 </html>
