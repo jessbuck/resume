@@ -67,7 +67,13 @@ function Work() {
       if (work.jobs.hasOwnProperty(jobIndex)) {
         $("#workExperience").append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[jobIndex].employer);
-        formattedEmployer = formattedEmployer.replace("#\"", work.jobs[jobIndex].url + "\"target=\"_blank\"");
+        if (work.jobs[jobIndex].url && work.jobs[jobIndex].url.length > 0) {
+          formattedEmployer = formattedEmployer.replace("#\"", work.jobs[jobIndex].url + "\"target=\"_blank\"");
+        }
+        else {
+          formattedEmployer = formattedEmployer.replace("href=\"#\"",
+            "class=\"disabled\"");
+        }
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[jobIndex].title);
         $(".work-entry:last").append(formattedEmployer + formattedTitle);
         var formattedDates = HTMLworkDates.replace("%data%", work.jobs[jobIndex].dates);
@@ -214,6 +220,16 @@ function addBioDetails(bio) {
 function addWorkDetails(work) {
   work.jobs = [];
   var job = {};
+  job.title = "Software Developer & Computer Science Tutor";
+  job.employer = "Freelance";
+  job.location = "Monmouth County, NJ";
+  job.dates = "January 2016 - Present";
+  job.description =
+  "•	Developing social media sentiment analysis applications using the Facebook Graph API and IBM AlchemyAPI." + "<br />" +
+  "•	Tutoring object-oriented programming in Java for the Advanced Placement Computer Science exam.";
+  work.jobs.push(job);
+
+  job = {};
   job.title = "Software Developer";
   job.employer = "Hybrid Healthcare Communications";
   job.location = "Red Bank, NJ";
